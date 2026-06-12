@@ -1,5 +1,5 @@
 import { getPost } from "@/services/post.service"
-
+import Link from 'next/link'
 export default async function Posts(){
     const data = await getPost();
     return(
@@ -7,8 +7,9 @@ export default async function Posts(){
             <h1>Hello welcome to Posts</h1>
             {
                 data.map((d) =>(
-                    <div>
-                        <p className="text-2xl text-red-500">Title - {d.title}</p>
+                    <div key={d.id}>
+                        <Link href={`/posts/${d.id}`}><p className="text-2xl text-red-500">Title - {d.title}</p></Link>
+                        
                         <p className="text-xl text-blue-500">Body - {d.body}</p>
                     </div>
                 ))
