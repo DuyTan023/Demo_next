@@ -10,7 +10,7 @@ export default async function PostDetail({
     
     const data = await getPostById(id)
 
-    const create = await CreateUser({name: "Phan minh Thuận", age: 20, address: "Cần Thơ"});
+    //const create = await CreateUser({name: "Phan minh Thuận", age: 20, address: "Cần Thơ"});
     return(
         <div>
             <p>{data.title}</p>
