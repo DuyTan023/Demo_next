@@ -1,4 +1,4 @@
-import { post } from "@/app/generated/prisma/browser";
+import { post, user } from "@/app/generated/prisma/browser";
 import { prisma } from "@/lib/prisma";
 import { CreateUserInput, PostDetail } from "@/types/type";
 
@@ -19,6 +19,10 @@ export async function getPostById(id: number): Promise<PostDetail>{
     )
 }
 
+
+export async function GetUser(): Promise<user[]>{
+    return await prisma.user.findMany();
+}
 export async function CreateUser(data: CreateUserInput){
     const newUser = prisma.user.create({
         data: {
