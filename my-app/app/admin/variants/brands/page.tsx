@@ -363,7 +363,7 @@ export default function BrandsPage() {
         </div>
         <Button
           onClick={() => setModalMode("add")}
-          className="bg-[#3B82F6] hover:bg-[#2563EB] text-white gap-2 h-10 px-5 shadow-sm"
+          className="bg-[#2563EB] hover:bg-[#2563EB] text-white gap-2 h-10 px-5 shadow-sm"
         >
           <Plus className="w-4 h-4" />
           Thêm hãng mới
