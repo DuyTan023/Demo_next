@@ -1,5 +1,5 @@
 "use client";
-
+import Link from 'next/link';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -201,7 +201,7 @@ const STATUS_CONFIG: Record<
 export default function PhoneManagementPage() {
   return (
     <TooltipProvider>
-      <div className="min-h-screen bg-[#F8FAFC] p-6 space-y-6">
+      <div className="bg-[#F8FAFC] max-w-7xl mx-auto flex flex-col gap-6 ">
         {/* ── Page header ── */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
@@ -492,13 +492,16 @@ export default function PhoneManagementPage() {
                         {/* View */}
                         <Tooltip>
                           <TooltipTrigger asChild>
-                            <Button
-                              variant="ghost"
-                              size="icon"
-                              className="w-8 h-8 text-slate-500 hover:text-blue-600 hover:bg-blue-50"
-                            >
-                              <Eye size={15} />
-                            </Button>
+                            <Link href = "/admin/phones/phone-detail">
+                              <Button
+                                variant="ghost"
+                                size="icon"
+                                className="w-8 h-8 text-slate-500 hover:text-blue-600 hover:bg-blue-50"
+                              >
+                                <Eye size={15} />
+                              </Button>
+                            </Link>
+                            
                           </TooltipTrigger>
                           <TooltipContent>Xem chi tiết</TooltipContent>
                         </Tooltip>
